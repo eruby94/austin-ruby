@@ -7,9 +7,9 @@ import Contact from '../components/Contact/index'
 class Home extends Component {
   render () {
     return (
-      <RouteData render={({ allPosts }) => (
+      <RouteData render={({ allPosts, About }) => (
         <div>
-          <Intro />
+          <Intro content={About} />
           <Work posts={allPosts} />
           <Contact />
         </div>

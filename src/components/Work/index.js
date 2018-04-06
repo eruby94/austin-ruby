@@ -56,6 +56,10 @@ export default props => (
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid #cfcfcf;
+        transition: background-color 0.2s;
+      }
+      .post-card:hover {
+        background-color: #f0ecec;
       }
       a:last-child .post-card {
         border-bottom: none;
