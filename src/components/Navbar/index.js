@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-static'
 
 const navItems = [
   {
-    title: 'Austin Ruby',
+    title: 'About',
     href: '/',
   },
   {
@@ -19,6 +19,13 @@ const navItems = [
 class Navbar extends Component {
   state = {
     activeLink: '/',
+  }
+  componentWillMount () {
+    if (typeof window !== 'undefined') {
+      this.setState({
+        activeLink: `/${window.location.hash}`,
+      })
+    }
   }
   componentDidMount () {
     this.props.history.listen(location => {
@@ -39,13 +46,18 @@ class Navbar extends Component {
             {item.title}
           </Link>
         ))}
-        <style jsx global>{`
+        <style jsx>{`
           nav {
             width: 100%;
-            background: #49132E;
+            background: var(--maroon);
             padding: .75rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
           }
-
+        `}</style>
+        <style jsx global>{`
           nav a {
             color: #ffffff;
             margin: 0 1rem;

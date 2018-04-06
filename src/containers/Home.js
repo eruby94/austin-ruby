@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { RouteData } from 'react-static'
+import Intro from '../components/Intro/index'
+import Work from '../components/Work/index'
+import Contact from '../components/Contact/index'
 
-export default () => (
-  <div>
-    <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
-  </div>
-)
+class Home extends Component {
+  render () {
+    return (
+      <RouteData render={({ allPosts }) => (
+        <div>
+          <Intro />
+          <Work posts={allPosts} />
+          <Contact />
+        </div>
+      )} />
+    )
+  }
+}
+
+export default Home

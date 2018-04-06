@@ -1,14 +1,32 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
 import flush from 'styled-jsx/server'
+import { request } from 'graphql-request'
+
+const GRAPHCMS_ENDPOINT = 'https://api.graphcms.com/simple/v1/austinruby'
+
+const query = `{
+  allPosts(orderBy: order_ASC) {
+    title
+    href
+    image {
+      url
+    }
+  }
+}`
 
 export default {
-  getRoutes: () => [
-    {
-      path: '/',
-      component: 'src/containers/Home',
-    },
-  ],
+  getRoutes: async () => {
+    const { allPosts } = await request(GRAPHCMS_ENDPOINT, query)
+    return [
+      {
+        path: '/',
+        component: 'src/containers/Home',
+        getData: () => ({
+          allPosts,
+        }),
+      },
+    ]
+  },
   renderToHtml: (render, Comp, meta) => {
     const html = render(<Comp />)
     const styles = flush()
@@ -24,6 +42,7 @@ export default {
       return (
         <Html>
           <Head>
+            <title>Austin Ruby</title>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             {renderMeta.styleTags}

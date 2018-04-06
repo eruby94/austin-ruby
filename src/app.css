@@ -1,13 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Fjord+One');
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+
+:root {
+  --maroon: #49132E;
+}
 
 body {
-  font-family: 'Fjord One', serif;
+  font-family: 'Tajawal', sans-serif;
   font-weight: 400;
   font-size: 16px;
   margin: 0;
   padding: 0;
 }
 
+section {
+  padding: 54px 15px;
+  min-height: calc(100vh - 54px);
+}
+
 .content {
-  padding: 1rem;
+  margin-top: 54px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: 'Fjord One', serif;
 }
