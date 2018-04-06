@@ -27,6 +27,22 @@ export default props => (
       h1 {
         margin-top: 0;
       }
+      @media screen and (max-width: 640px) {
+        #intro {
+          flex-direction: column;
+        }
+        #img-container {
+          width: 100%;
+          margin: 0;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+        #about-container {
+          width: 100%;
+        }
+      }
     `}</style>
   </section>
 )
