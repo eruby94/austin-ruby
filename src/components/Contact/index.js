@@ -8,55 +8,54 @@ class ContactForm extends Component {
   render () {
     return (
       <section id="contact">
-        <h2>Contact</h2>
+        <h2>Let's Connect</h2>
+        <p id="form-intro">Short line of text to introduce the contact form...</p>
         <Form
-          name="book-tower-subscribe"
+          id="contact-form"
+          name="contact"
           method="post"
-          action="/success-subscribe"
+          action="/contact-success"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          className="flex items-center justify-center"
         >
-          <div className="flex form-group">
-            <input style={{ display: 'none' }} name="bot-field" />
-            <input type="hidden" name="form-name" value="book-tower-subscribe" />
-            <div className="input-wrapper">
-              <Input name="name" placeholder="Name" validations={[required]} />
-            </div>
-            <div className="input-wrapper">
-              <Input name="email" placeholder="Email Address" validations={[required, email]} />
-            </div>
-            <div className="input-wrapper">
-              <Textarea name="message" placeholder="Message" validations={[required]} />
-            </div>
-            <Button className="submit-button pointer">Subscribe</Button>
+          <input style={{ display: 'none' }} name="bot-field" />
+          <input type="hidden" name="form-name" value="book-tower-subscribe" />
+          <div className="input-wrapper">
+            <Input name="name" placeholder="Name" validations={[required]} />
           </div>
+          <div className="input-wrapper">
+            <Input name="email" placeholder="Email Address" validations={[required, email]} />
+          </div>
+          <div className="input-wrapper">
+            <Textarea name="message" placeholder="Message" validations={[required]} />
+          </div>
+          <Button className="submit-button pointer">Subscribe</Button>
         </Form>
         <style jsx>{`
           #contact {
             padding: 0;
-            margin: 0 30px;
+            margin: 96px auto 46px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
           }
-          form {
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 50px;
+          #form-intro {
+            margin: 2.5rem 0;
           }
-          .form-group {
-            width: 60%;
-            max-width: 500px;
-          }
-          .input-wrapper div {
-            width: 100%;
-          }
-          @media screen and (max-width: 30em) {
-            .form-group {
+          @media screen and (max-width: 640px) {
+            #contact {
               width: calc(100% - 30px);
+              padding: 0 15px;
             }
           }
         `}</style>
         <style jsx global>{`
+          #contact-form {
+            width: 100% !important;
+            max-width: 1100px;
+            margin-bottom: 50px;
+          }
           .error-msg {
             color: red;
             display: block;
@@ -69,7 +68,7 @@ class ContactForm extends Component {
           textarea {
             outline: none;
             padding: 11px 8px;
-            margin: 0 0 10px;
+            margin: 0 0 1rem;
             width: calc(100% - 15px);
             box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
             font-size: 1rem;

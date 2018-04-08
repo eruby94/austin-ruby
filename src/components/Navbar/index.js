@@ -8,11 +8,11 @@ const navItems = [
   },
   {
     title: 'Work',
-    href: '/#work',
+    href: '/work',
   },
   {
     title: 'Contact',
-    href: '/#contact',
+    href: '/contact',
   },
 ]
 
@@ -23,45 +23,67 @@ class Navbar extends Component {
   componentWillMount () {
     if (typeof window !== 'undefined') {
       this.setState({
-        activeLink: `/${window.location.hash}`,
+        activeLink: `${window.location.pathname}`,
       })
     }
   }
   componentDidMount () {
     this.props.history.listen(location => {
       this.setState({
-        activeLink: `/${location.hash}`,
+        activeLink: `${location.pathname}`,
       })
     })
   }
   render () {
     return (
-      <nav>
-        {navItems.map((item, index) => (
-          <Link
-            key={index}
-            to={item.href}
-            className={this.state.activeLink === item.href ? 'active-link' : ''}
-          >
-            {item.title}
-          </Link>
-        ))}
+      <div id="nav-container">
+        <h1>Austin Ruby</h1>
+        <nav>
+          {navItems.map((item, index) => (
+            <Link
+              key={index}
+              to={item.href}
+              className={this.state.activeLink === item.href ? 'active-link' : ''}
+            >
+              {item.title}
+            </Link>
+          ))}
+        </nav>
         <style jsx>{`
-          nav {
-            width: 100%;
+          #nav-container {
+            width: calc(100% - 2rem);
             background: var(--maroon);
-            padding: .75rem 0;
+            padding: .75rem 1rem;
             position: fixed;
+            display: flex;
+            justify-content: space-between;
             top: 0;
             left: 0;
             z-index: 100;
+            color: #ffffff;
+          }
+          h1 {
+            margin: 0;
+          }
+          @media screen and (max-width: 640px) {
+            nav {
+              background: var(--maroon);
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              padding: 0.5rem 0 0.5rem;
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              z-index: 100;
+            }
           }
         `}</style>
         <style jsx global>{`
           nav a {
             color: #ffffff;
             margin: 0 1rem;
-            padding: .25rem 0;
+            padding: 0.5rem 0 0;
             font-weight: bold;
             text-decoration: none;
             display: inline-block;
@@ -70,7 +92,7 @@ class Navbar extends Component {
             border-bottom: 2px solid #cfcfcf;
           }
         `}</style>
-      </nav>
+      </div>
     )
   }
 }

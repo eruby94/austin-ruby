@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { RouteData } from 'react-static'
-import Intro from '../components/Intro/index'
+import Intro from '../components/Home/index'
 import Work from '../components/Work/index'
-import Contact from '../components/Contact/index'
 
 class Home extends Component {
   render () {
@@ -10,8 +9,14 @@ class Home extends Component {
       <RouteData render={({ allPosts, About }) => (
         <div>
           <Intro content={About} />
-          <Work posts={allPosts} />
-          <Contact />
+          <div id="hidden">
+            <Work posts={allPosts} />
+          </div>
+          <style jsx>{`
+            #hidden {
+              display: none;
+            }
+          `}</style>
         </div>
       )} />
     )

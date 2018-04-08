@@ -3,10 +3,9 @@ import React from 'react'
 export default props => (
   <section id="intro">
     <div id="img-container">
-      <img src={props.content.avatarImage.url} alt="Me on a trip to Italy" />
+      <img src={props.content.avatarImage.url} alt={props.content.avatarImage.alt} />
     </div>
     <div id="about-container">
-      <h1>Austin Ruby</h1>
       {props.content.paragraphs.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
@@ -14,30 +13,29 @@ export default props => (
     <style jsx>{`
       #intro {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 30px 30px 0;
         min-height: auto;
       }
       #img-container {
-        width: calc(50vw - 45px);
-        margin-right: 30px;
+        width: 40%;
+        margin: 2rem 0;
       }
       #about-container {
-        width: calc(50vw - 45px);
+        width: 55%;
+      }
+      img {
+        width: 100%;
+        height: auto;
       }
       h1 {
         margin-top: 0;
       }
       @media screen and (max-width: 640px) {
-        #intro {
-          flex-direction: column;
-        }
         #img-container {
           width: 100%;
           margin: 0;
-        }
-        img {
-          width: 100%;
-          height: auto;
         }
         #about-container {
           width: 100%;

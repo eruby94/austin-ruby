@@ -42,6 +42,7 @@ export default props => (
       h3 {
         color: #000000;
         margin-top: 0;
+        font-size: 16px;
       }
       #work {
         background-color: #ffffff;
@@ -54,7 +55,7 @@ export default props => (
         padding: 15px;
         margin: 0;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         border-bottom: 1px solid #cfcfcf;
         transition: background-color 0.2s;
       }
@@ -65,14 +66,15 @@ export default props => (
         border-bottom: none;
       }
       .post-image {
-        background-color: var(--maroon);
+        background-color: #cfcfcf;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        height: 325px;
-        width: 100%;
-        margin-right: 15px;
+        height: 75px;
+        width: 75px;
+        min-width: 75px;
         margin-bottom: 15px;
+        margin-right: 15px;
       }
       a {
         width: calc(50% - 15px);
@@ -95,6 +97,7 @@ export default props => (
           width: 60px;
           height: 60px;
           margin-bottom: 0;
+          margin-right: 15px;
         }
       }
     `}</style>

@@ -15,6 +15,7 @@ const query = `{
   About(id:"cjfly8irs773f0128t6cxy1lu") {
     avatarImage {
       url
+      alt
     }
     paragraphs
   }
@@ -28,9 +29,20 @@ export default {
         path: '/',
         component: 'src/containers/Home',
         getData: () => ({
-          allPosts,
           About,
+          allPosts,
         }),
+      },
+      {
+        path: '/work',
+        component: 'src/containers/Work',
+        getData: () => ({
+          allPosts,
+        }),
+      },
+      {
+        path: '/contact',
+        component: 'src/containers/Contact',
       },
     ]
   },
