@@ -1,12 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Fjord+One');
-@import url('https://fonts.googleapis.com/css?family=Tajawal');
+@font-face {
+  font-family: 'Delicious';
+  src: url('./fonts/Delicious-Roman.otf');
+}
+
+@font-face {
+  font-family: 'Delicious';
+  src: url('./fonts/Delicious-Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Delicious';
+  src: url('./fonts/Delicious-Italic.otf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Junction';
+  src: url('./fonts/Junction-regular-webfont.woff');
+}
+
+@font-face {
+  font-family: 'Junction';
+  src: url('./fonts/Junction-bold-webfont.woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Junction';
+  src: url('./fonts/Junction-light-webfont.woff');
+  font-weight: 300;
+}
 
 :root {
   --maroon: #49132E;
 }
 
 body {
-  font-family: 'Tajawal', sans-serif;
+  font-family: 'Junction', sans-serif;
   font-weight: 400;
   font-size: 16px;
   margin: 0;
@@ -28,7 +59,7 @@ h4,
 h5,
 h6,
 a {
-  font-family: 'Fjord One', serif;
+  font-family: 'Delicious', serif;
 }
 
 @media screen and (max-width: 640px) {

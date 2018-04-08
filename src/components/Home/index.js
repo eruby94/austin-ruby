@@ -20,7 +20,7 @@ export default props => (
       }
       #img-container {
         width: 40%;
-        margin: 2rem 0;
+        margin: 1rem 0;
       }
       #about-container {
         width: 55%;

@@ -37,7 +37,7 @@ class Navbar extends Component {
   render () {
     return (
       <div id="nav-container">
-        <h1>Austin Ruby</h1>
+        <Link to="/"><h1>Austin Ruby</h1></Link>
         <nav>
           {navItems.map((item, index) => (
             <Link
@@ -80,6 +80,10 @@ class Navbar extends Component {
           }
         `}</style>
         <style jsx global>{`
+          #nav-container a {
+            color: #ffffff;
+            text-decoration: none;
+          }
           nav a {
             color: #ffffff;
             margin: 0 1rem;
