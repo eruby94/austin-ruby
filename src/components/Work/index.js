@@ -45,6 +45,7 @@ export default props => (
         font-size: 16px;
       }
       #work {
+        padding-top: 0;
         background-color: #ffffff;
         min-height: auto;
         flex-wrap: wrap;

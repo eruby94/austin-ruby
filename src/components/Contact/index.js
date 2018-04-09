@@ -8,8 +8,8 @@ class ContactForm extends Component {
   render () {
     return (
       <section id="contact">
-        <h2>Let's Connect</h2>
-        <p id="form-intro">Short line of text to introduce the contact form...</p>
+        <h2>{this.props.title}</h2>
+        <p id="form-intro">{this.props.formIntro}</p>
         <Form
           id="contact-form"
           name="contact"
@@ -29,7 +29,7 @@ class ContactForm extends Component {
           <div className="input-wrapper">
             <Textarea name="message" placeholder="Message" validations={[required]} />
           </div>
-          <Button className="submit-button pointer">Subscribe</Button>
+          <Button className="submit-button pointer">Submit</Button>
         </Form>
         <style jsx>{`
           #contact {

@@ -19,11 +19,20 @@ const query = `{
     }
     paragraphs
   }
+  Contact(id:"cjfsboouhgac80176n2vzsu2l") {
+    title
+    formIntro
+  }
+  Work(id:"cjfsc6cq8ghz30107zcv9ercw") {
+    title
+  }
 }`
 
 export default {
   getRoutes: async () => {
-    const { allPosts, About } = await request(GRAPHCMS_ENDPOINT, query)
+    const {
+      allPosts, About, Contact, Work,
+    } = await request(GRAPHCMS_ENDPOINT, query)
     return [
       {
         path: '/',
@@ -37,12 +46,16 @@ export default {
         path: '/work',
         component: 'src/containers/Work',
         getData: () => ({
+          page: Work,
           allPosts,
         }),
       },
       {
         path: '/contact',
         component: 'src/containers/Contact',
+        getData: () => ({
+          Contact,
+        }),
       },
     ]
   },
