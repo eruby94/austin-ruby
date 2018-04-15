@@ -30,6 +30,9 @@ class ContactForm extends Component {
       .then(res => {
         console.log(res)
       })
+      .catch(e => {
+        console.log(e)
+      })
   }
   handleChange (e) {
     const newState = {}
