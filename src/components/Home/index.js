@@ -32,6 +32,14 @@ export default props => (
       h1 {
         margin-top: 0;
       }
+      @media screen and (max-width: 1023px) {
+        #img-container {
+          width: 50%;
+        }
+        #about-container {
+          width: calc(200% / 3);
+        }
+      }
       @media screen and (max-width: 640px) {
         #img-container {
           width: 100%;
