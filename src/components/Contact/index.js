@@ -22,7 +22,7 @@ class ContactForm extends Component {
   }
   handleSubmit (e) {
     e.preventDefault()
-    axios('/', {
+    axios('/contact-success', {
       method: 'post',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...this.state }),
