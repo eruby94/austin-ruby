@@ -11,6 +11,12 @@ const query = `{
     image {
       url
     }
+    category
+  }
+  postCategories: __type(name: "Category") {
+    enumValues{
+      name
+    }
   }
   About(id:"cjfly8irs773f0128t6cxy1lu") {
     avatarImage {
@@ -31,8 +37,19 @@ const query = `{
 export default {
   getRoutes: async () => {
     const {
-      allPosts, About, Contact, Work,
+      allPosts, postCategories, About, Contact, Work,
     } = await request(GRAPHCMS_ENDPOINT, query)
+    const categorizedPosts = postCategories.enumValues.map(category => ({
+      name: category.name,
+      posts: [],
+    }))
+    allPosts.forEach(post => {
+      categorizedPosts.forEach(category => {
+        if (post.category === category.name) {
+          category.posts.push(post)
+        }
+      })
+    })
     return [
       {
         path: '/',
@@ -47,7 +64,7 @@ export default {
         component: 'src/containers/Work',
         getData: () => ({
           page: Work,
-          allPosts,
+          categorizedPosts,
         }),
       },
       {

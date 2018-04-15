@@ -5,14 +5,22 @@ import Posts from '../components/Work/index'
 class Work extends Component {
   render () {
     return (
-      <RouteData render={({ allPosts, page }) => (
+      <RouteData render={({ categorizedPosts, page }) => (
         <div>
           <h1>{page.title}</h1>
-          <Posts posts={allPosts} />
+          {categorizedPosts.map(category => (
+            <div key={category.name}>
+              <h2>{category.name.replace(/_/g, ' ')}</h2>
+              <Posts posts={category.posts} />
+            </div>
+          ))}
           <style jsx>{`
             h1 {
               padding-top: 2rem;
               text-align: center;
+            }
+            h2 {
+              margin-left: 15px;
             }
           `}</style>
         </div>
