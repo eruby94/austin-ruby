@@ -63,6 +63,11 @@ export default props => (
       .post-card:hover {
         background-color: #f0ecec;
       }
+      @media screen and (min-width: 640px) {
+        a:nth-last-child(2) .post-card {
+          border-bottom: none;
+        }  
+      }
       a:last-child .post-card {
         border-bottom: none;
       }

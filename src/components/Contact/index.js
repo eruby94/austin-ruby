@@ -19,7 +19,7 @@ class ContactForm extends Component {
           data-netlify-honeypot="bot-field"
         >
           <input style={{ display: 'none' }} name="bot-field" />
-          <input type="hidden" name="form-name" value="book-tower-subscribe" />
+          <input type="hidden" name="form-name" value="contact" />
           <div className="input-wrapper">
             <Input name="name" placeholder="Name" validations={[required]} />
           </div>
@@ -42,6 +42,11 @@ class ContactForm extends Component {
           }
           #form-intro {
             margin: 2.5rem 0;
+          }
+          @media screen and (max-width: 1023px) {
+            #contact {
+              width: calc(200% / 3);
+            }
           }
           @media screen and (max-width: 640px) {
             #contact {
