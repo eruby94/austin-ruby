@@ -27,6 +27,9 @@ class ContactForm extends Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...this.state }),
     })
+      .then(res => {
+        console.log(res)
+      })
   }
   handleChange (e) {
     const newState = {}
