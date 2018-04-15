@@ -1,11 +1,40 @@
 import React, { Component } from 'react'
 import Form from 'react-validation/build/form'
 import Input from 'react-validation/build/input'
-import { required, email } from 'bedrock-sdk/validators'
+import axios from 'axios'
+import { required, email as validEmail } from 'bedrock-sdk/validators'
 import { Textarea, Button } from 'bedrock-sdk/formHelpers'
 
+const encode = data => Object.keys(data)
+  .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+  .join('&')
+
 class ContactForm extends Component {
+  constructor (props) {
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+  state = {
+    name: '',
+    email: '',
+    message: '',
+  }
+  handleSubmit (e) {
+    e.preventDefault()
+    axios('/', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state }),
+    })
+  }
+  handleChange (e) {
+    const newState = {}
+    newState[e.target.name] = e.target.value
+    this.setState(newState)
+  }
   render () {
+    const { name, email, message } = this.state
     return (
       <section id="contact">
         <h2>{this.props.title}</h2>
@@ -21,15 +50,38 @@ class ContactForm extends Component {
           <input style={{ display: 'none' }} name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <div className="input-wrapper">
-            <Input name="name" placeholder="Name" validations={[required]} />
+            <Input
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+              placeholder="Name"
+              validations={[required]}
+            />
           </div>
           <div className="input-wrapper">
-            <Input name="email" placeholder="Email Address" validations={[required, email]} />
+            <Input
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+              placeholder="Email Address"
+              validations={[required, validEmail]} />
           </div>
           <div className="input-wrapper">
-            <Textarea name="message" placeholder="Message" validations={[required]} />
+            <Textarea
+              name="message"
+              value={message}
+              onChange={this.handleChange}
+              placeholder="Message"
+              validations={[required]}
+            />
           </div>
-          <Button className="submit-button pointer">Submit</Button>
+          <Button
+            className="submit-button pointer"
+            type="button"
+            onClick={this.handleSubmit}
+          >
+            Submit
+          </Button>
         </Form>
         <style jsx>{`
           #contact {
