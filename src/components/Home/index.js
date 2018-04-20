@@ -7,7 +7,7 @@ export default props => (
         <p key={index}>{paragraph}</p>
       ))}
     </div>
-    <div id="img-container">
+    {/* <div id="img-container">
       <img src={props.content.avatarImage.url} alt={props.content.avatarImage.alt} />
       <div id="social-icons">
         <a href="mailto:austinjruby@gmail.com"><i className="fa fa-3x fa-envelope-square" /></a>
@@ -15,26 +15,41 @@ export default props => (
         <i className="fab fa-3x fa-twitter-square" />
         <i className="fab fa-3x fa-instagram" />
       </div>
-    </div>
+    </div> */}
     <style jsx>{`
       #intro {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 30px 30px 0;
-        min-height: calc(100vh - 96px);
+        min-height: calc(100vh - 54px);
+        padding: 0;
+        background-image: url(${props.content.avatarImage.url});
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right -250px top;
       }
       #img-container {
         width: 40%;
         margin: 1rem 0;
       }
       #about-container {
-        width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - 54px);
+        background: rgba(255,255,255,1);
+        background: linear-gradient(to right, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 59%, rgba(255,255,255,0.88) 64%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
         line-height: 26px;
+      }
+      #about-container p {
+        width: 55%;
+        padding: 0 30px;
       }
       img {
         width: 100%;
         height: auto;
+        border-radius: 5px;
       }
       h1 {
         margin-top: 0;
