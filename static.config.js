@@ -25,10 +25,6 @@ const query = `{
     }
     paragraphs
   }
-  Contact(id:"cjfsboouhgac80176n2vzsu2l") {
-    title
-    formIntro
-  }
   Work(id:"cjfsc6cq8ghz30107zcv9ercw") {
     title
   }
@@ -37,7 +33,7 @@ const query = `{
 export default {
   getRoutes: async () => {
     const {
-      allPosts, postCategories, About, Contact, Work,
+      allPosts, postCategories, About, Work,
     } = await request(GRAPHCMS_ENDPOINT, query)
     const categorizedPosts = postCategories.enumValues.map(category => ({
       name: category.name,
@@ -67,13 +63,6 @@ export default {
           categorizedPosts,
         }),
       },
-      {
-        path: '/contact',
-        component: 'src/containers/Contact',
-        getData: () => ({
-          Contact,
-        }),
-      },
     ]
   },
   renderToHtml: (render, Comp, meta) => {
@@ -96,6 +85,12 @@ export default {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             {renderMeta.styleTags}
             <link href="https://fonts.googleapis.com/css?family=Fjord+One" rel="stylesheet" />
+            <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+              integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+              crossOrigin="anonymous"
+            />
           </Head>
           <Body>{children}</Body>
         </Html>
