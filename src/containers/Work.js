@@ -19,6 +19,12 @@ class Work extends Component {
               padding-top: 2rem;
               text-align: center;
             }
+            @media screen and (max-width: 640px) {
+              h1 {
+                text-align: left;
+                padding-left: 15px;
+              }
+            }
             h2 {
               margin-left: 15px;
             }

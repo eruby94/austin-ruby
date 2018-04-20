@@ -66,7 +66,7 @@ export default props => (
       @media screen and (min-width: 640px) {
         a:nth-last-child(2) .post-card {
           border-bottom: none;
-        }  
+        }
       }
       a:last-child .post-card {
         border-bottom: none;
