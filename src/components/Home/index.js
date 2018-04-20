@@ -6,16 +6,13 @@ export default props => (
       {props.content.paragraphs.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
-    </div>
-    {/* <div id="img-container">
-      <img src={props.content.avatarImage.url} alt={props.content.avatarImage.alt} />
       <div id="social-icons">
         <a href="mailto:austinjruby@gmail.com"><i className="fa fa-3x fa-envelope-square" /></a>
         <i className="fab fa-3x fa-facebook-square" />
         <i className="fab fa-3x fa-twitter-square" />
         <i className="fab fa-3x fa-instagram" />
       </div>
-    </div> */}
+    </div>
     <style jsx>{`
       #intro {
         display: flex;
@@ -62,15 +59,14 @@ export default props => (
         border-radius: 5px;
       }
       #social-icons {
+        width: 55%;
         margin: 40px 0 0;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 100%;
       }
       #social-icons i {
         margin: 0 25px;
-        /* transition: 0.3s; */
         cursor: pointer;
         opacity: 0.5;
       }
