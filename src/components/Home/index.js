@@ -35,6 +35,7 @@ export default props => (
       img {
         width: 100%;
         height: auto;
+        border-radius: 5px;
       }
       h1 {
         margin-top: 0;
@@ -55,7 +56,6 @@ export default props => (
       }
       #social-icons i {
         margin: 0 25px;
-        /* transition: 0.3s; */
         cursor: pointer;
         opacity: 0.5;
       }
