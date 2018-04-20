@@ -10,10 +10,6 @@ const navItems = [
     title: 'Work',
     href: '/work',
   },
-  {
-    title: 'Contact',
-    href: '/contact',
-  },
 ]
 
 class Navbar extends Component {
@@ -94,6 +90,11 @@ class Navbar extends Component {
           }
           nav a.active-link {
             border-bottom: 2px solid #cfcfcf;
+          }
+          @media screen and (max-width: 640px) {
+            nav a {
+              padding: 0;
+            }
           }
         `}</style>
       </div>
