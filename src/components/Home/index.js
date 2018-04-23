@@ -8,9 +8,9 @@ export default props => (
       ))}
       <div id="social-icons">
         <a href="mailto:austinjruby@gmail.com"><i className="fa fa-3x fa-envelope-square" /></a>
-        <i className="fab fa-3x fa-facebook-square" />
-        <i className="fab fa-3x fa-twitter-square" />
-        <i className="fab fa-3x fa-instagram" />
+        <a href="https://www.facebook.com/austin.ruby.71"><i className="fab fa-3x fa-facebook-square" /></a>
+        <a href="https://twitter.com/austinjruby"><i className="fab fa-3x fa-twitter-square" /></a>
+        <a href="https://www.instagram.com/austinjruby/"><i className="fab fa-3x fa-instagram" /></a>
       </div>
     </div>
     <style jsx>{`
