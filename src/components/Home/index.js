@@ -25,10 +25,6 @@ export default props => (
         background-repeat: no-repeat;
         background-position: right -250px top;
       }
-      #img-container {
-        width: 40%;
-        margin: 1rem 0;
-      }
       #about-container {
         display: flex;
         flex-direction: column;
@@ -85,27 +81,56 @@ export default props => (
       .fa-instagram {
         color: #c32aa3
       }
-      @media screen and (max-width: 1023px) {
-        #img-container {
-          width: 50%;
+      @media screen and (max-width: 1151px) {
+        #intro {
+          flex-direction: column;
+          background-position: top;
         }
         #about-container {
-          width: calc(200% / 3);
+          padding-top: calc(42rem + 5px);
+          min-height: auto;
+          background: linear-gradient(to top, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 45%, rgba(255,255,255,1) 46%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0) 100%);
+        }
+        #about-container p {
+          width: calc(100% - 60px);
+          padding: 0 30px;
+        }
+        #social-icons {
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
+      @media screen and (max-width: 1023px) {
+        #about-container {
+          padding-top: calc(21rem + 5px);
+          min-height: calc(100vh - 19rem - 5px);
+          background: linear-gradient(to top, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 59%, rgba(255,255,255,1) 63%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0) 100%);
+        }
+        #about-container p {
+          width: calc(100% - 60px);
+          padding: 0 30px;
+        }
+        #social-icons {
+          width: 100%;
+          margin-bottom: 0;
         }
       }
       @media screen and (max-width: 640px) {
-        #intro {
-          flex-direction: column;
-        }
-        #img-container {
-          width: 100%;
-          margin: 0;
-        }
         #about-container {
+          padding-top: calc(15rem + 5px);
           width: 100%;
+          background: linear-gradient(to top, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 59%, rgba(255,255,255,1) 82%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0.15) 94%, rgba(255,255,255,0) 100%);
+        }
+        #about-container p {
+          width: calc(100% - 30px);
+          padding: 0 15px;
         }
         #social-icons {
+          justify-content: space-between;
           margin-bottom: 40px;
+        }
+        #social-icons i {
+          margin: 0 15px;
         }
       }
     `}</style>
