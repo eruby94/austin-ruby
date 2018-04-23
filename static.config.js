@@ -27,6 +27,7 @@ const query = `{
   }
   Work(id:"cjfsc6cq8ghz30107zcv9ercw") {
     title
+    bodyCopy
   }
 }`
 
