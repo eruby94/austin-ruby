@@ -87,6 +87,7 @@ export default {
             <meta name="description" content="I'm a budding wordsmith living in Brooklyn -- the more I write, the more I'm inspired to keep writing. I've helped create content for startups, manage a personal blog, and contribute regularly at OurBKSocial. Make sure to check out some of my work and connect with me on social media." />
             {renderMeta.styleTags}
             <link href="https://fonts.googleapis.com/css?family=Fjord+One" rel="stylesheet" />
+            <link rel="shortcut icon" href="/favicon.ico" />
             <link
               rel="stylesheet"
               href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
