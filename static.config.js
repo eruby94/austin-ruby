@@ -84,7 +84,7 @@ export default {
             <title>Austin Ruby</title>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="description" content="I'm a budding wordsmith living in Brooklyn -- the more I write, the more I'm inspired to keep writing. I've helped create content for startups, manage a personal blog, and contribute regularly at OurBKSocial. Make sure to check out some of my work and connect with me on social media." />
+            <meta name="description" content="I'm a freelance writer living in Brooklyn -- the more I write, the more I'm inspired to keep writing. I've helped create content for startups, manage a personal blog, and contribute regularly at OurBKSocial. Make sure to check out some of my work and connect with me on social media." />
             {renderMeta.styleTags}
             <link href="https://fonts.googleapis.com/css?family=Fjord+One" rel="stylesheet" />
             <link rel="shortcut icon" href="/favicon.ico" />
